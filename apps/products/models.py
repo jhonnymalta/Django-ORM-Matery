@@ -29,7 +29,7 @@ class Product(models.Model):
     url = models.SlugField()
     is_active = models.BooleanField()
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
-    fabricant = models.OneToOneField(Fabricant,on_delete=models.CASCADE)
+    fabricant = models.ManyToManyField(Fabricant)
 
     def __str__(self) -> str:
         return self.name
